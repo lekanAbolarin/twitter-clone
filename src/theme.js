@@ -5,7 +5,7 @@ const legacyBackground = "#e7eff6";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#e40084",
+      main: "#1da1f2",
     },
     secondary: {
       main: "#ffffff",
@@ -14,60 +14,63 @@ const theme = createMuiTheme({
       main: "#ff3333",
     },
     text: {
-      primary: "#000000",
-      secondary: "#dddddd",
+      primary: "#152025",
+      secondary: "#5b7079",
     },
     background: {
       paper: "#ffffff",
-      default: "#181818",
+      default: "#ffffff",
     },
   },
   typography: {
     h1: {
-      marginBottom: "30px",
+      // marginBottom: "30px",
       fontFamily: "Display",
     },
     h2: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Display",
     },
     h3: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Display",
     },
     h4: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Display",
     },
     h5: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Display",
     },
     h6: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Display",
+      fontSize: "19px",
+      fontWeight: "700",
+      lineHeight: "1.3125",
     },
     subtitle1: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Typ",
     },
     subtitle2: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Typ",
     },
     body1: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Typ",
     },
     body2: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Typ",
     },
     button: {
       fontFamily: "Typ",
     },
     caption: {
-      marginBottom: "20px",
+      // marginBottom: "20px",
       fontFamily: "Typ",
     },
     overline: {

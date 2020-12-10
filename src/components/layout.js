@@ -1,28 +1,15 @@
 import React from "react";
 // import '../assets/scss/main.scss';
 import { ThemeProvider } from "@material-ui/styles";
-import theme from "../theme";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "../theme";
+import Grid from "@material-ui/core/Grid";
+import useTheme from "@material-ui/core/styles/useTheme";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import Header from "./Header";
 import graphikRegular from "../assets/fonts/Graphik-Regular-Web.woff2";
-
-const styles = (theme) => ({
-  body: {
-    width: "100vw",
-    maxWidth: "100vw",
-    padding: "10vh 8vw",
-    top: "0",
-    left: "0",
-    [theme.breakpoints.up("sm")]: {
-      padding: "10vh 15vw",
-    },
-  },
-  isLoading: {
-    display: "none",
-  },
-});
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
     section: {},
     a: {
-      color: "#000000",
+      color: "inherit",
       textDecoration: "none",
 
       "&:hover": {
@@ -94,35 +81,46 @@ const Baseline = ({ children }) => {
   return <div className={classes.root}>{children}</div>;
 };
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      showBorder: false,
-    };
-  }
+const Layout = (props) => {
+  const { children } = props;
+  const _theme = useTheme();
+  const isMobile = useMediaQuery(_theme.breakpoints.down("xs"));
+  const page = (
+    <Baseline>
+      {!isMobile ? (
+        <Grid container>
+          <Grid item xs={4} sm={4} style={{ height: "100vh" }}>
+            <Header />
+          </Grid>
+          <Grid item xs={8} sm={8}>
+            {children}
+          </Grid>
+        </Grid>
+      ) : (
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            poition: "relative",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div style={{ flexGrow: "1" }}>{children}</div>
+          <div style={{ height: "54px" }}>
+            <Header />
+          </div>
+        </div>
+      )}
+    </Baseline>
+  );
 
-  componentDidMount() {}
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {page}
+    </ThemeProvider>
+  );
+};
 
-  componentWillUnmount() {}
-
-  render() {
-    const { children, classes } = this.props;
-    const page = (
-      <Baseline>
-        <Header />
-        {children}
-      </Baseline>
-    );
-
-    return (
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {page}
-      </ThemeProvider>
-    );
-  }
-}
-
-export default withStyles(styles)(Layout);
+export default Layout;
