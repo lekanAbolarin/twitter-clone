@@ -42,88 +42,6 @@ const Game = (props) => {
     setInputValue(value);
   };
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    if (inputValue < 0 || inputValue > 100) {
-      setInputError(true);
-      return;
-    }
-    setInputError(false);
-    setStatus(comparator(inputValue, props.choice));
-  };
-
-  const comparator = (guess, choice) => {
-    const difference = guess - choice;
-    gsap.to(mecury.current, { width: `${40 + (difference / 100) * 40}%` });
-    if (difference > 0 && difference < 50) {
-      return (
-        <Typography
-          ref={caption}
-          variant="caption"
-          align="center"
-          component="p"
-        >
-          <span style={{ color: "red" }}>Hotter!</span>
-        </Typography>
-      );
-    }
-    if (difference < 0 && difference > -50) {
-      return (
-        <Typography
-          ref={caption}
-          variant="caption"
-          align="center"
-          component="p"
-        >
-          <span style={{ color: "teal" }}>Colder!</span>
-        </Typography>
-      );
-    }
-    if (difference >= 50) {
-      return (
-        <Typography
-          ref={caption}
-          variant="caption"
-          align="center"
-          component="p"
-        >
-          <span style={{ color: "red" }}>Burning Hot!</span>
-        </Typography>
-      );
-    }
-    if (difference <= -50) {
-      return (
-        <Typography
-          ref={caption}
-          variant="caption"
-          align="center"
-          component="p"
-        >
-          <span style={{ color: "teal" }}>Freezing Cold!</span>
-        </Typography>
-      );
-    }
-    if (difference === 0) {
-      return (
-        <Typography
-          ref={caption}
-          variant="caption"
-          align="center"
-          component="p"
-        >
-          <span style={{ color: "white" }}>Perfect!</span>
-        </Typography>
-      );
-    }
-    return (
-      <Typography ref={caption} variant="caption" align="center" component="p">
-        <span style={{ color: "white", textAlign: "center" }}>
-          {difference}
-        </span>
-      </Typography>
-    );
-  };
-
   useLayoutEffect(() => {}, [isMobile]);
 
   const siteTitle = "Hot or Cold";
@@ -131,7 +49,65 @@ const Game = (props) => {
     <Layout>
       <SEO title={siteTitle} />
 
-      <main style={{ width: "100%", position: "fixed" }}></main>
+      <main role="main" style={{ flex: "1", width: "100%" }}>
+        <div
+          style={{
+            flex: "1",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "stretch",
+            borderRightWidth: "1px",
+            borderRightWidth: "1px",
+          }}
+        >
+          <div
+            style={{
+              flex: "1",
+              width: "100%",
+              paddingBottom: "99px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "stretch",
+            }}
+          >
+            <section
+              role="region"
+              style={{
+                flex: "1",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "stretch",
+              }}
+            >
+              <div
+                ariaLabel="Timeline: Your Home Timeline"
+                style={{
+                  flex: "1",
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "stretch",
+                }}
+              >
+                <div
+                  style={{
+                    flex: "1",
+                    width: "100%",
+                    minHeight: "75641px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "stretch",
+                  }}
+                >
+                  <h1>Tweets!</h1>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
     </Layout>
   );
 };

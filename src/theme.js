@@ -25,53 +25,53 @@ const theme = createMuiTheme({
   typography: {
     h1: {
       // marginBottom: "30px",
-      fontFamily: "Display",
+      // fontFamily: "Display",
     },
     h2: {
       // marginBottom: "20px",
-      fontFamily: "Display",
+      // fontFamily: "Display",
     },
     h3: {
       // marginBottom: "20px",
-      fontFamily: "Display",
+      // fontFamily: "Display",
     },
     h4: {
       // marginBottom: "20px",
-      fontFamily: "Display",
+      // fontFamily: "Display",
     },
     h5: {
       // marginBottom: "20px",
-      fontFamily: "Display",
+      // fontFamily: "Display",
     },
     h6: {
       // marginBottom: "20px",
-      fontFamily: "Display",
+      // fontFamily: "Display",
       fontSize: "19px",
       fontWeight: "700",
       lineHeight: "1.3125",
     },
     subtitle1: {
       // marginBottom: "20px",
-      fontFamily: "Typ",
+      // fontFamily: "Typ",
     },
     subtitle2: {
       // marginBottom: "20px",
-      fontFamily: "Typ",
+      // fontFamily: "Typ",
     },
     body1: {
       // marginBottom: "20px",
-      fontFamily: "Typ",
+      // fontFamily: "Typ",
     },
     body2: {
       // marginBottom: "20px",
-      fontFamily: "Typ",
+      // fontFamily: "Typ",
     },
     button: {
-      fontFamily: "Typ",
+      // fontFamily: "Typ",
     },
     caption: {
       // marginBottom: "20px",
-      fontFamily: "Typ",
+      // fontFamily: "Typ",
     },
     overline: {
       // fontFamily: 'Typ',

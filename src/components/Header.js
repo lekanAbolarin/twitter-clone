@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Button from "../components/Button";
 import Avatar from "@material-ui/core/Avatar";
+import Nav from "./Nav";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
     justifyContent: "space-between",
     position: "static",
+    zIndex: "3",
   },
   twitterIcon: {
     width: "47px",
@@ -39,6 +40,12 @@ const useStyles = makeStyles((theme) => ({
       padding: "7px 0",
     },
   },
+  mobileHeader: {
+    width: "100%",
+    height: "54px",
+    position: "relative",
+    zIndex: "3",
+  },
 }));
 
 const Header = (props) => {
@@ -46,6 +53,7 @@ const Header = (props) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const [activePath, setActivePath] = useState("index");
+  const [drawerVisibility, setDrawerVisibility] = useState(false);
   const activeStyle = {
     color: theme.palette.primary.main,
     fill: theme.palette.primary.main,
@@ -433,7 +441,71 @@ const Header = (props) => {
       </div>
     </header>
   ) : (
-    <header className={classes.mobileHeader}>mobileHeader</header>
+    <header className={classes.mobileHeader}>
+      <div style={{ width: "100%", height: "54px" }} />
+      <div
+        style={{
+          width: "100%",
+          height: "54px",
+          zIndex: "2",
+          position: "fixed",
+          top: "0.5px",
+          left: "0",
+          borderBottom: "1px solid rgb(196, 207, 214)",
+        }}
+      >
+        <div
+          style={{
+            height: "100%",
+            padding: "0 15px",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <div onClick={() => setDrawerVisibility(!drawerVisibility)}>
+            <Avatar
+              style={{ width: "30px", height: "30px", marginRight: "29px" }}
+            />
+          </div>
+          <Typography variant="h6" style={{ flexGrow: "1" }}>
+            {activePath === "index" ? "Home" : activePath}
+          </Typography>
+          <div style={{ width: "37px", marginLeft: "20px" }}>
+            <Button variant="icon" noPadding>
+              <div
+                style={{
+                  width: "37px",
+                  height: "37px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="1.5em"
+                  height="1.5em"
+                  style={{
+                    color: "rgba(29, 161, 242, 1)",
+                    fill: "currentcolor",
+                  }}
+                >
+                  <g>
+                    <path d="M22.772 10.506l-5.618-2.192-2.16-6.5c-.102-.307-.39-.514-.712-.514s-.61.207-.712.513l-2.16 6.5-5.62 2.192c-.287.112-.477.39-.477.7s.19.585.478.698l5.62 2.192 2.16 6.5c.102.306.39.513.712.513s.61-.207.712-.513l2.16-6.5 5.62-2.192c.287-.112.477-.39.477-.7s-.19-.585-.478-.697zm-6.49 2.32c-.208.08-.37.25-.44.46l-1.56 4.695-1.56-4.693c-.07-.21-.23-.38-.438-.462l-4.155-1.62 4.154-1.622c.208-.08.37-.25.44-.462l1.56-4.693 1.56 4.694c.07.212.23.382.438.463l4.155 1.62-4.155 1.622zM6.663 3.812h-1.88V2.05c0-.414-.337-.75-.75-.75s-.75.336-.75.75v1.762H1.5c-.414 0-.75.336-.75.75s.336.75.75.75h1.782v1.762c0 .414.336.75.75.75s.75-.336.75-.75V5.312h1.88c.415 0 .75-.336.75-.75s-.335-.75-.75-.75zm2.535 15.622h-1.1v-1.016c0-.414-.335-.75-.75-.75s-.75.336-.75.75v1.016H5.57c-.414 0-.75.336-.75.75s.336.75.75.75H6.6v1.016c0 .414.335.75.75.75s.75-.336.75-.75v-1.016h1.098c.414 0 .75-.336.75-.75s-.336-.75-.75-.75z" />
+                  </g>
+                </svg>
+              </div>
+            </Button>
+          </div>
+        </div>
+      </div>
+      <Nav
+        drawerVisibility={drawerVisibility}
+        setDrawerVisibility={setDrawerVisibility}
+        activePath={activePath}
+        setActivePath={setActivePath}
+      />
+    </header>
   );
 };
 

@@ -93,7 +93,17 @@ const Layout = (props) => {
             <Header />
           </Grid>
           <Grid item xs={8} sm={8}>
-            {children}
+            <div
+              style={{
+                width: "100%",
+                height: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "stretch",
+              }}
+            >
+              {children}
+            </div>
           </Grid>
         </Grid>
       ) : (
@@ -106,10 +116,8 @@ const Layout = (props) => {
             flexDirection: "column",
           }}
         >
-          <div style={{ flexGrow: "1" }}>{children}</div>
-          <div style={{ height: "54px" }}>
-            <Header />
-          </div>
+          <Header />
+          {children}
         </div>
       )}
     </Baseline>
