@@ -1,0 +1,71 @@
+{
+  "title": "Tweets",
+  "content": [
+    {
+      "id": "0",
+      "type": "tweet",
+      "user": "@babyabdulkadeer",
+      "userAlias": "BAHAUSHIYA",
+      "since": "1h",
+      "retweetedBy": "Amtex Nigeria Limited Kaduna",
+      "profilePicture": "/assets/profilePictures/babyabdulkadeer.jpg",
+      "message": "Having a great day? Here's how mine went",
+      "comments": "4",
+      "retweets": "14",
+      "likes": "35",
+      "thread": true
+    },
+    {
+      "id": "1",
+      "type": "retweet",
+      "user": "@MarieMackneel",
+      "userAlias": "Tracy McNeil",
+      "since": "7h",
+      "retweetedBy": "deray",
+      "profilePicture": "/assets/profilePictures/marieMacknell.jpg",
+      "message": "I see you @NYSenBenjamin!! Light always the best disinfectant!",
+      "retweeting": {
+        "id": "3947",
+        "type": "quotedTweet",
+        "user": "@deray",
+        "userAlias": "@deray",
+        "since": "Dec 7",
+        "retweetedBy": null,
+        "profilePicture": "/assets/profilePictures/derey.jpg",
+        "message": "State senate bill would require NYC to disclose details of NYPD settlements https://nydailynews.com/news/politics/new-york-elections-government/ny-brian-benjamin-nypd-settlements-20201207-zb2toeznz5bujf34e5tpm7ktgy-story.html"
+      },
+      "comments": "0",
+      "retweets": "1",
+      "likes": "6",
+      "thread": false
+    },
+    {
+      "id": "3",
+      "type": "tweet",
+      "user": "@EBK_Koff",
+      "userAlias": "Kofi",
+      "since": "Dec 7",
+      "retweetedBy": "mark",
+      "profilePicture": "/assets/profilePictures/ebk_koff.jpg",
+      "message": "Had to bring this Gem back the In Sync “Im tellin ya” is still Legendary Rolling on the floor laughingRolling on the floor laughing",
+      "comments": "157",
+      "retweets": "9.8K",
+      "likes": "41K",
+      "thread": true
+    },
+    {
+      "id": "4",
+      "type": "tweet",
+      "user": "@trafficbutter",
+      "userAlias": "Traffic Updates + Useful Info",
+      "since": "10h",
+      "retweetedBy": null,
+      "profilePicture": "/assets/profilePictures/trafficbutter.jpg",
+      "message": "VIA  @Mr_JAGss : The Lagos State Traffic Management Authority ( @followlastma ) has condemned an attack on its official, Mr. Kosoko Razak, by a suspected commercial driver of an unpainted Suzuki Minibus with registration number AAA 693 YC at Jakande in Lekki, Lagos State",
+      "comments": "157",
+      "retweets": "9.8K",
+      "likes": "41K",
+      "thread": true
+    }
+  ]
+}

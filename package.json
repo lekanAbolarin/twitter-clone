@@ -1,0 +1,39 @@
+{
+  "name": "twitter-clone",
+  "description": "Nodejs implementation of twitter",
+  "version": "1.0.0",
+  "author": "Mike Abolarin",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/styles": "^4.10.0",
+    "gatsby": "^2.15.14",
+    "gatsby-plugin-manifest": "^2.7.0",
+    "gatsby-plugin-material-ui": "^2.1.10",
+    "gatsby-plugin-offline": "^3.0.6",
+    "gatsby-plugin-react-helmet": "^3.5.0",
+    "gatsby-plugin-sass": "^2.1.14",
+    "gh-pages": "^3.1.0",
+    "gsap": "^3.5.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build ---prefix-paths && gh-pages -d public"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lekanabolarin/twitter-clone"
+  }
+}
