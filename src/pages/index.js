@@ -14,7 +14,14 @@ import Container from "../components/container";
 import Footer from "../components/footer";
 import { randomSelection } from "../utils";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  columnar: {
+    display: "flex",
+    flexDirection: "column",
+    flexBasis: "auto",
+    alignItems: "stretch",
+  },
+}));
 
 const Homepage = (props) => {
   const classes = useStyles();
@@ -28,40 +35,44 @@ const Homepage = (props) => {
     <Layout>
       <SEO title={siteTitle} />
 
-      <main role="main" style={{ flex: "1", width: "100%" }}>
+      <main
+        role="main"
+        className={classes.columnar}
+        style={{ width: "990px", backfaceVisibility: "hidden" }}
+      >
         <div
-          style={{
-            flex: "1",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "stretch",
-            borderRightWidth: "1px",
-            borderRightWidth: "1px",
-          }}
+          className={classes.columnar}
+          style={{ flexDirection: "row", alignItem: "stretch", flex: "1" }}
         >
           <div
+            className={classes.columnar}
             style={{
               flex: "1",
-              width: "100%",
-              paddingBottom: "99px",
+              width: "600px",
+              maxWidth: "600px",
               display: "flex",
               flexDirection: "column",
               alignItems: "stretch",
+              borderWidth: "0 1px 0 1px",
+              borderLeftWidth: "1px",
+              borderRightWidth: "1px",
+              borderColor: "rgb(235, 238, 240)",
+              borderStyle: "solid",
+              zIndex: "1",
             }}
           >
-            <section
-              role="region"
+            <div
               style={{
                 flex: "1",
                 width: "100%",
+                paddingBottom: "99px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "stretch",
               }}
             >
-              <div
-                ariaLabel="Timeline: Your Home Timeline"
+              <section
+                role="region"
                 style={{
                   flex: "1",
                   width: "100%",
@@ -71,22 +82,33 @@ const Homepage = (props) => {
                 }}
               >
                 <div
+                  ariaLabel="Timeline: Your Home Timeline"
                   style={{
                     flex: "1",
                     width: "100%",
-                    minHeight: "75641px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "stretch",
                   }}
                 >
-                  <h1>Tweets!</h1>
-                  {tweets.content.map((tweet) => (
-                    <Tweet key={tweet.id} tweet={tweet} />
-                  ))}
+                  <div
+                    style={{
+                      flex: "1",
+                      width: "100%",
+                      minHeight: "75641px",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "stretch",
+                    }}
+                  >
+                    <h1>Tweets!</h1>
+                    {tweets.content.map((tweet) => (
+                      <Tweet key={tweet.id} tweet={tweet} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         </div>
       </main>

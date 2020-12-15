@@ -64,15 +64,18 @@ const Header = (props) => {
 
   return !isMobile ? (
     <header className={classes.header}>
-      <div style={{ width: "276px", height: "100%" }}>
+      <div style={{ width: "275px", position: "relative" }}>
         <div
           style={{
+            width: "275px",
             height: "100%",
             padding: "0 10px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             alignItems: "stretch",
+            position: "fixed",
+            top: "0",
           }}
         >
           <div

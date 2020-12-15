@@ -4,7 +4,6 @@ import { ThemeProvider } from "@material-ui/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../theme";
-import Grid from "@material-ui/core/Grid";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
@@ -12,15 +11,7 @@ import Header from "./Header";
 import graphikRegular from "../assets/fonts/Graphik-Regular-Web.woff2";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // width: '100vw',
-    // height: '100vh',
-    // padding: '10vh 8vw',
-    overflow: "hidden",
-    [theme.breakpoints.up("sm")]: {
-      // padding: '10vh 15vw',
-    },
-  },
+  root: {},
   "@global": {
     html: {
       width: "100vw",
@@ -30,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     },
     body: {
       width: "100vw",
-      height: "100vh",
       color: "#000000",
       "&::-webkit-scrollbar": {
         display: "none",
@@ -88,24 +78,31 @@ const Layout = (props) => {
   const page = (
     <Baseline>
       {!isMobile ? (
-        <Grid container>
-          <Grid item xs={4} sm={4} style={{ height: "100vh" }}>
+        <div
+          style={{
+            width: "100vw",
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "stretch",
+          }}
+        >
+          <div
+            style={{ flexGrow: "1", display: "flex", alignItems: "flex-end" }}
+          >
             <Header />
-          </Grid>
-          <Grid item xs={8} sm={8}>
-            <div
-              style={{
-                width: "100%",
-                height: "100vh",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "stretch",
-              }}
-            >
-              {children}
-            </div>
-          </Grid>
-        </Grid>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              flexShrink: "1",
+              flexGrow: "1",
+            }}
+          >
+            {children}
+          </div>
+        </div>
       ) : (
         <div
           style={{
