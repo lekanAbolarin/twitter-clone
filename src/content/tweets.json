@@ -2,20 +2,6 @@
   "title": "Tweets",
   "content": [
     {
-      "id": "0",
-      "type": "tweet",
-      "user": "@babyabdulkadeer",
-      "userAlias": "BAHAUSHIYA",
-      "since": "1h",
-      "retweetedBy": "Amtex Nigeria Limited Kaduna",
-      "profilePicture": "/assets/profilePictures/babyabdulkadeer.jpg",
-      "message": "Having a great day? Here's how mine went",
-      "comments": "4",
-      "retweets": "14",
-      "likes": "35",
-      "thread": true
-    },
-    {
       "id": "1",
       "type": "retweet",
       "user": "@MarieMackneel",

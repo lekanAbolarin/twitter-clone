@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "54px",
     position: "relative",
+    backgroundColor: "rgba(255, 255, 255, 1.0)",
     zIndex: "3",
   },
 }));
@@ -86,7 +87,7 @@ const Header = (props) => {
               alignItems: "flex-start",
             }}
           >
-            <Button variant="icon">
+            <Button variant="icon" noPadding>
               <Typography variant="h6">
                 <a href="/">
                   <div className={classes.twitterIcon}>
@@ -452,16 +453,19 @@ const Header = (props) => {
     </header>
   ) : (
     <header className={classes.mobileHeader}>
-      <div style={{ width: "100%", height: "54px" }} />
+      {/* <div style={{ width: "100%", height: "54px" }} />vv */}
       <div
         style={{
           width: "100%",
           height: "54px",
           zIndex: "2",
           position: "fixed",
-          top: "0.5px",
+          top: "0px",
           left: "0",
+          backgroundColor: "rgba(255, 255, 255, 1.0)",
+          borderTop: "0px solid black",
           borderBottom: "1px solid rgb(196, 207, 214)",
+          overflow: "hidden",
         }}
       >
         <div
