@@ -49,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Button = (props) => {
   const classes = useStyles();
-  const style = props.noPadding ? { padding: "0" } : { padding: "10px" };
+  const pStyle = props.style ? props.style : {};
+  const style = props.noPadding
+    ? { padding: "0", ...pStyle }
+    : { padding: "10px", ...pStyle };
   return props.variant === "filled" ? (
     <div role="button" className={classes.filled} style={style}>
       {props.children}

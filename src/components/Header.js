@@ -370,7 +370,13 @@ const Header = (props) => {
                 flexDirection: "column",
               }}
             >
-              <Button variant="filled" noPadding>
+              <Button
+                variant="filled"
+                noPadding
+                style={{
+                  boxShadow: "rgba(0, 0, 0, 0.08) 0px 8px 28px",
+                }}
+              >
                 <a
                   style={{
                     minWidth: "100%",
